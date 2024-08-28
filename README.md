@@ -66,7 +66,7 @@ e.g. `cobra-cli init --author "Steve Francia spf@spf13.com"`
 You can provide a license to use with `--license` 
 e.g. `cobra-cli init --license apache`
 
-Use the `--viper` flag to automatically setup [viper](https://github.com/spf13/viper)
+Use the `--viper` flag to automatically setup [viper]
 
 Viper is a companion to Cobra intended to provide easy handling of environment variables and config files and seamlessly connecting them to the application flags.
 
@@ -130,50 +130,6 @@ The Cobra generator will be easier to use if you provide a simple configuration
 file which will help you eliminate providing a bunch of repeated information in
 flags over and over.
 
-An example ~/.cobra.yaml file:
 
-```yaml
-author: Steve Francia <spf@spf13.com>
-license: MIT
-useViper: true
-```
 
-You can also use built-in licenses. For example, **GPLv2**, **GPLv3**, **LGPL**,
-**AGPL**, **MIT**, **2-Clause BSD** or **3-Clause BSD**.
 
-You can specify no license by setting `license` to `none` or you can specify
-a custom license:
-
-```yaml
-author: Steve Francia <spf@spf13.com>
-year: 2020
-license:
-  header: This file is part of CLI application foo.
-  text: |
-    {{ .copyright }}
-
-    This is my license. There are many like it, but this one is mine.
-    My license is my best friend. It is my life. I must master it as I must
-    master my life.
-```
-
-In the above custom license configuration the `copyright` line in the License
-text is generated from the `author` and `year` properties. The content of the
-`LICENSE` file is
-
-```
-Copyright © 2020 Steve Francia <spf@spf13.com>
-
-This is my license. There are many like it, but this one is mine.
-My license is my best friend. It is my life. I must master it as I must
-master my life.
-```
-
-The `header` property is used as the license header files. No interpolation is
-done. This is the example of the go file header.
-```
-/*
-Copyright © 2020 Steve Francia <spf@spf13.com>
-This file is part of CLI application foo.
-*/
-```
